@@ -1,0 +1,196 @@
+body {
+  background-color: rgb(2, 45, 77);
+  filter: brightness(0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  background: linear-gradient(20deg, #032b49, #b3d4ff);
+  animation: gradient-bg 5s ease-in-out infinite;
+}
+.frosted {
+  background-color: rgb(255, 255, 255); /* Set a semi-transparent white background color */
+  backdrop-filter: blur(5px); /* Apply a blur filter to the background */
+  opacity: 1; /* Set the opacity of the element to make it appear translucent */
+}
+
+
+input[type="text"] {
+  padding: 20px;
+  border-radius: 34px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+.container {
+  padding: 30px 40px;
+  border-radius: 70px;
+  border: none;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  backdrop-filter: blur(5px); /* Apply a blur filter to the background */
+  opacity: 1; /* Set the opacity of the element to make it appear translucent */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  height: 70px;
+
+  transition: height 0.5s ease;
+}
+
+.searchbox {
+  padding: 0px;
+  border-radius: 34px;
+  border: none;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  display: visible;
+  transition: opacity 0.2s ease;
+}
+
+.searchbox input{
+    color: #06283D;
+    width: 60%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+  
+}
+
+.searchbox input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+    color: #06283D;
+    text-transform: capitalize;
+  
+}
+.icon {
+  margin: 0%;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: ;
+  
+  border: none;
+  overflow: hidden;
+  display: flex;
+
+  align-items: right;
+  padding-right: 20;
+  
+}
+
+button:hover {
+  background-color: #5294c7;
+  color: white;
+  transition: background-color 0.3s ease;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  
+
+  
+  padding-right: 20;
+}
+
+.button img {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  padding-top: 35%;
+  padding-left: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+
+.button img.invisible {
+  opacity: 0;
+}
+
+.fadeout{
+      opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+.description {
+  font-size: 28px;
+}
+
+
+.weatherResults {
+  width: 300px;
+  height: 100%;
+  padding: 0px;
+  border-radius: 70px;
+  border: none;
+  background-color: #b3d4ff;
+  display: none;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.cityName {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.weather {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  padding: 0px;
+  border-radius: 70px;
+  border: none;
+  background-color: #f2f2f2;
+  display: none;
+/*   justify-content: center; 
+  align-items: center;  */
+/*   width: 500px */
+  
+}
+
+.temp {
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 1s;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none; /* removes default bullet points */
+  flex-direction: column;
+  align-items: center;
+  margin: 0; /* removes default margin */
+  padding: 0; /* removes default padding */
+}
+
+li {
+  margin-bottom: 10px; /* adds spacing between list items */
+}
