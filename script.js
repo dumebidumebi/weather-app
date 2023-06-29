@@ -29,7 +29,7 @@ async function fetchWeatherData(lower) {
       if (weatherResponse.ok) {
         const weatherData = await weatherResponse.json();
         console.log(weatherData.weather)
-        description.innerHTML = weatherData.weather[0].description;
+        
         CityName.innerHTML = data.name;
         CityName.classList.add('fadeIn');
         weatherBox.classList.add('fadeIn');
@@ -37,11 +37,18 @@ async function fetchWeatherData(lower) {
 
         container.style.height = '500px';
   // searchBox.style.opacity = 0;
+  
   searchBox.style.display = "none";
   weatherBox.style.display = "flex"
+  weatherBox.style.opacity = 0;
+  weatherBox.style.height = '200px';
+  
   weatherResults.style.display = "flex"
 
-        switch (weatherData.weather[0].main) {
+setTimeout(function() {
+  weatherBox.style.opacity = 100;
+  description.innerHTML = weatherData.weather[0].description;
+  switch (weatherData.weather[0].main) {
           case 'Clear':
             image.src = 'images/clear.png';
             break;
@@ -63,8 +70,12 @@ async function fetchWeatherData(lower) {
             break;
 
           default:
-            image.src = '';
+            image.src = 'images/mist.png';
+            image.style.opacity = 0;
         }
+  image.style.opacity = 100;
+}, 500);
+        
 
       } else {
         throw new Error(weatherResponse.statusText);
@@ -105,70 +116,9 @@ button.addEventListener('mouseover', () => {
 
 button.addEventListener('click', () => {
   button.style.backgroundColor = 'blue';
-  // container.style.height = '500px';
-  // // searchBox.style.opacity = 0;
-  // searchBox.style.display = "none";
-  // weatherBox.style.display = "flex"
-  // weatherResults.style.display = "flex"
 
   const city = document.querySelector('.searchtext').value;
   const lower = city.toLowerCase();
-
-
-  // async function fetchWeatherData(lower) {
-  //   try {
-  //     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${lower}&units=metric&appid=${apiKey}`);
-  //     if (response.ok) {
-  //       const data = await response.json();
-  //       console.log(data)
-  //       const lat = data.coord.lat;
-  //       const lon = data.coord.lon;
-  //       const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
-  //       if (weatherResponse.ok) {
-  //         const weatherData = await weatherResponse.json();
-  //         console.log(weatherData.weather)
-  //         description.innerHTML = weatherData.weather[0].description;
-  //         CityName.innerHTML = data.name;
-  //         CityName.classList.add('fadeIn');
-  //         weatherBox.classList.add('fadeIn');
-  //         temp.classList.add('fadeIn');
-
-  //         switch (weatherData.weather[0].main) {
-  //           case 'Clear':
-  //             image.src = 'images/clear.png';
-  //             break;
-
-  //           case 'Rain':
-  //             image.src = 'images/rain.png';
-  //             break;
-
-  //           case 'Snow':
-  //             image.src = 'images/snow.png';
-  //             break;
-
-  //           case 'Clouds':
-  //             image.src = 'images/cloud.png';
-  //             break;
-
-  //           case 'Haze':
-  //             image.src = 'images/mist.png';
-  //             break;
-
-  //           default:
-  //             image.src = '';
-  //         }
-
-  //       } else {
-  //         throw new Error(weatherResponse.statusText);
-  //       }
-  //     } else {
-  //       throw new Error(response.statusText);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error: ', error);
-  //   }
-  // }
-
 
 
 
