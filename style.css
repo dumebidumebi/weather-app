@@ -59,7 +59,7 @@ input[type="text"]:focus {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
   opacity: 1;
   display: visible;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.5s ease;
 }
 
 .searchbox input{
@@ -138,6 +138,7 @@ button:hover {
 
 .description {
   font-size: 28px;
+  transition: opacity 0.5s ease-in;
 }
 
 
